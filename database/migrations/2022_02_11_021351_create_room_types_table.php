@@ -15,8 +15,8 @@ class CreateRoomTypesTable extends Migration
     {
         Schema::create('room_types', function (Blueprint $table) {
             $table->id();
-            $table->string('room_number');
-            $table->enum('room_type', ['Reguler', 'Deluxe', 'Superior', 'VIP']);
+            $table->enum('room_type', ['Reguler', 'Deluxe', 'Superior']);
+            $table->string('number_of_rooms');
             $table->foreignId('facility_id')->constrained('facilities');
             $table->timestamps();
         });

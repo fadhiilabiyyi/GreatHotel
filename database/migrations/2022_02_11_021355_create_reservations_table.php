@@ -18,6 +18,7 @@ class CreateReservationsTable extends Migration
             $table->foreignId('booking_id')->constrained('bookings');
             $table->dateTime('check_in');
             $table->dateTime('check_out');
+            $table->enum('status', ['booking', 'check_in', 'check_out']);
             $table->timestamps();
         });
     }

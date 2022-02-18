@@ -16,6 +16,7 @@ class CreateFacilitiesTable extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('facility_name');
+            $table->enum('facility_type', ['hotel', 'room']);
             $table->longText('description');
             $table->timestamps();
         });
