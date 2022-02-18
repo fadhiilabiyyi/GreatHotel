@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.login')
 
 @section('container')
 <div class="container col-xl-10 col-xxl-8">
