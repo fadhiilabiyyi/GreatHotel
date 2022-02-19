@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
         // Paginator using Bootstrap
         Paginator::useBootstrap();
 
+        // Define Gate for Hotel Guest
+        Gate::define('hotel_guest', function(User $user) {
+            return $user->role === 'hotel_guest';
+        });
+
         // Define Admin and Receptionist Gate
         Gate::define('admin', function(User $user) {
             return $user->role === 'administrator';
