@@ -35,7 +35,7 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a href="/dashboard/user" class="nav-link {{ Request::is('dashboard/user*') ? 'active' : '' }}">User</a>
+                                    <a href="/dashboard/users" class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}">User</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link {{ Request::is('dashboard/rooms*') ? 'active' : '' }}">Kamar</a>

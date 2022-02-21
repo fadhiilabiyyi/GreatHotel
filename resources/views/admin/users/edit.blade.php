@@ -5,9 +5,9 @@
 <h1 class="h2">Edit User</h1>
 
 <div class="col-lg-8">
-    <a href="{{ route('user.index') }}" class="btn btn-secondary mb-3">Back</a>
+    <a href="{{ route('users.index') }}" class="btn btn-secondary mb-3">Back</a>
 
-    <form action="{{ route('user.update', $user->id) }}" method="POST">
+    <form action="{{ route('users.update', $user->id) }}" method="POST">
         @method('PUT')
         @csrf
         <div class="mb-3">

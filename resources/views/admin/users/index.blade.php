@@ -29,10 +29,10 @@
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->role }}</td>
                 <td>
-                    <a href="{{ route('user.edit', $user->id) }}" class="badge bg-warning" onclick="return confirm('Apakah Anda Yakin?')">
+                    <a href="{{ route('users.edit', $user->id) }}" class="badge bg-warning" onclick="return confirm('Apakah Anda Yakin?')">
                         <span>Edit</span></a>
 
-                        <form action="{{ route('user.destroy', $user->id) }}" method="post" class="d-inline">
+                        <form action="{{ route('users.destroy', $user->id) }}" method="post" class="d-inline">
                             
                             @method('delete')
                             @csrf
@@ -46,7 +46,7 @@
         </tbody>
     </table>
     <div class="text-end">
-        <a href="{{ route('user.create') }}" class="btn btn-primary mb-3">Create new User</a>
+        <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Create new User</a>
     </div>
 
     {{ $users->links() }}
