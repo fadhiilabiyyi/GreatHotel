@@ -10,9 +10,11 @@ class DashboardController extends Controller
     public function index()
     {
         if (Auth::user()->role === 'hotel_guest' ) {
-            return view('hotel_guest.index');
+            $title = 'Guest Dashboard';
+            return view('hotel_guest.index', compact('title'));
         } elseif (Auth::user()->role === 'administrator' ) {
-            return view('admin.index');
+            $title = 'Administrator Dashboard';
+            return view('admin.index', compact('title'));
         } else {
             return view('admin.index');
         }
