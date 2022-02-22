@@ -2,7 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Room;
+use App\Models\User;
+use App\Models\Booking;
+use App\Models\Facility;
+use App\Models\Reservation;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +19,114 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(5)->create();
+
+        User::create([
+            'name' => 'Fadhiil Abiyyi Tamsil',
+            'username' => 'fadhiil-admin',
+            'password' => Hash::make('password'),
+            'role' => 'administrator',
+        ]);
+
+        User::create([
+            'name' => 'Fadhiil Abiyyi Tamsil',
+            'username' => 'fadhiil-receptionist',
+            'password' => Hash::make('password'),
+            'role' => 'receptionist',
+        ]);
+
+        User::create([
+            'name' => 'Fadhiil Abiyyi Tamsil',
+            'username' => 'fadhiil-guest',
+            'password' => Hash::make('password'),
+            'role' => 'hotel_guest',
+        ]);
+
+        Facility::create([
+            'facility_name' => 'TV 50 Inch',
+            'facility_type' => 'room',
+            'description' => 'TV keren bagus buat main PS5',
+        ]);
+
+        Facility::create([
+            'facility_name' => 'Kasur Extra',
+            'facility_type' => 'room',
+            'description' => 'Cocok untuk keluarga',
+        ]);
+
+        Facility::create([
+            'facility_name' => 'Kolam Renang',
+            'facility_type' => 'hotel',
+            'description' => 'Air pegunungan, bukan kaporit, apalagi air hangat',
+        ]);
+
+        Facility::create([
+            'facility_name' => 'Gym',
+            'facility_type' => 'room',
+            'description' => 'Cocok buat body builder',
+        ]);
+
+        Room::create([
+            'room_type' => 'Reguler',
+            'number_of_rooms' => '100',
+            'facility_id' => '1',
+        ]);
+
+        Room::create([
+            'room_type' => 'Deluxe',
+            'number_of_rooms' => '75',
+            'facility_id' => '2',
+        ]);
+
+        Room::create([
+            'room_type' => 'Superior',
+            'number_of_rooms' => '50',
+            'facility_id' => '1',
+        ]);
+
+        Booking::create([
+            'order_name' => 'Yamin Soe',
+            'user_id' => '1',
+            'email' => 'yamien@gmail.com',
+            'telephone' => '089602974567',
+            'room_id' => '1',
+        ]);
+
+        Booking::create([
+            'order_name' => 'Joko Wi Anjwar',
+            'user_id' => '2',
+            'email' => 'wianjwar@gmail.com',
+            'telephone' => '081632641280',
+            'room_id' => '2',
+        ]);
+
+        Booking::create([
+            'order_name' => 'Dani Wizzbeng',
+            'user_id' => '3',
+            'email' => 'wizzbang@gmail.com',
+            'telephone' => '089678456783',
+            'room_id' => '3',
+        ]);
+
+        Reservation::create([
+            'booking_id' => '1',
+            'check_in' => now(),
+            'check_out' => now(),
+            'status' => 'check_in',
+        ]);
+
+        Reservation::create([
+            'booking_id' => '2',
+            'check_in' => now(),
+            'check_out' => now(),
+            'status' => 'check_in',
+        ]);
+
+        Reservation::create([
+            'booking_id' => '3',
+            'check_in' => now(),
+            'check_out' => now(),
+            'status' => 'check_in',
+        ]);
     }
 }
