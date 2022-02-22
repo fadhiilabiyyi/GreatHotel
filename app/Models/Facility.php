@@ -11,8 +11,8 @@ class Facility extends Model
 
     protected $guarded = ['id'];
 
-    public function room_types()
+    public function rooms()
     {
-        return $this->hasMany(RoomType::class);
+        return $this->hasMany(Room::class);
     }
 }

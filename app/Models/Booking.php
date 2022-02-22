@@ -21,8 +21,8 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function room_type()
+    public function room()
     {
-        return $this->belongsTo(RoomType::class);
+        return $this->belongsTo(Room::class);
     }
 }

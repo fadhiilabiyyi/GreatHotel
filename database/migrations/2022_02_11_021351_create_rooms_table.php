@@ -13,7 +13,7 @@ class CreateRoomTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('room_types', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->enum('room_type', ['Reguler', 'Deluxe', 'Superior']);
             $table->string('number_of_rooms');
@@ -29,6 +29,6 @@ class CreateRoomTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('room_types');
+        Schema::dropIfExists('rooms');
     }
 }
