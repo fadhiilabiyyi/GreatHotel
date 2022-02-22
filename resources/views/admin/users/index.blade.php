@@ -11,7 +11,7 @@
     @endif
 
 <div class="table-responsive col-lg-12">
-    <table class="table table-sm table-bordered table-hover  border-dark">
+    <table class="table table-sm table-bordered table-hover border-dark text-center">
         <thead>
             <tr>
                 <th>#</th>
@@ -27,7 +27,21 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->username }}</td>
-                <td>{{ $user->role }}</td>
+                <td>
+                    @switch($user->role)
+                        @case('hotel_guest')
+                            Hotel Guest
+                            @break
+                        @case('administrator')
+                            Administrator
+                            @break
+                        @case('receptionist')
+                            Receptionist
+                            @break
+                        @default
+                            Hotel Guest
+                    @endswitch    
+                </td>
                 <td>
                     <a href="{{ route('users.edit', $user->id) }}" class="badge bg-warning" onclick="return confirm('Apakah Anda Yakin?')">
                         <span>Edit</span></a>

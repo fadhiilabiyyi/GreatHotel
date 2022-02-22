@@ -55,7 +55,7 @@ class AdminUserController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/dashboard/user')->with('success', 'New User has been added');
+        return redirect('/dashboard/users')->with('success', 'New User has been added');
     }
 
     /**
@@ -106,7 +106,7 @@ class AdminUserController extends Controller
 
         User::where('id', $user->id)->update($validatedData);
 
-        return redirect('/dashboard/user')->with('success', 'New User has been updated');
+        return redirect('/dashboard/users')->with('success', 'New User has been updated');
     }
 
     /**
@@ -119,6 +119,6 @@ class AdminUserController extends Controller
     {
         User::destroy($user->id);
 
-        return redirect('/dashboard/user')->with('success', 'User has been deleted');
+        return redirect('/dashboard/users')->with('success', 'User has been deleted');
     }
 }
