@@ -19,7 +19,7 @@ class CreateBookingsTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->string('email')->unique();
             $table->string('telephone');
-            $table->foreignId('room_type_id')->constrained('room_types');
+            $table->foreignId('room_id')->constrained('rooms');
             $table->timestamps();
         });
     }
