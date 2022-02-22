@@ -41,7 +41,7 @@
                                     <a href="#" class="nav-link {{ Request::is('dashboard/rooms*') ? 'active' : '' }}">Kamar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link {{ Request::is('dashboard/room-facilities*') ? 'active' : '' }}">Fasilitas Kamar</a>
+                                    <a href="/dashboard/room-facilities" class="nav-link {{ Request::is('dashboard/room-facilities*') ? 'active' : '' }}">Fasilitas Kamar</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link {{ Request::is('dashboard/hotel-facilities*') ? 'active' : '' }}">Fasilitas Hotel</a>
