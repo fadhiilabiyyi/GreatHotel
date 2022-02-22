@@ -37,21 +37,10 @@
                                 <li class="nav-item">
                                     <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/rooms" class="nav-link {{ Request::is('rooms') ? 'active' : '' }}">Kamar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/facilities" class="nav-link {{ Request::is('facilities') ? 'active' : '' }}">Fasilitas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/booking" class="nav-link {{ Request::is('booking') ? 'active' : '' }}">Pesan Kamar</a>
-                                </li>
-
-                                <!-- Guest -->
+                                
                                 <li class="nav-item">
                                     <a href="/login" class="nav-link {{ Request::is('login') ? 'active' : '' }}">Login</a>
                                 </li>
-                                
                             </ul>
                         </div>
                     </div>
@@ -61,7 +50,7 @@
             <main class="mt-4">
                 <div class="container-fluid">
                     <div class="text-center">
-                        <img src="../assets/app-img/home01.jpg" width="1280" class="img-fluid" alt="Hotel Image 01">
+                        <img src="../assets/app-img/home01.jpg" class="img-fluid" width="900" alt="Hotel Image 01">
                     </div>
 
                     {{-- Container --}}
