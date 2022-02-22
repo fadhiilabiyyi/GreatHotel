@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.hotel_guest')
 
 @section('container')
 <div class="mb-5 mt-5">
