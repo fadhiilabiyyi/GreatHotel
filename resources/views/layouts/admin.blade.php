@@ -44,7 +44,7 @@
                                     <a href="/dashboard/room-facilities" class="nav-link {{ Request::is('dashboard/room-facilities*') ? 'active' : '' }}">Fasilitas Kamar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link {{ Request::is('dashboard/hotel-facilities*') ? 'active' : '' }}">Fasilitas Hotel</a>
+                                    <a href="/dashboard/hotel-facilities" class="nav-link {{ Request::is('dashboard/hotel-facilities*') ? 'active' : '' }}">Fasilitas Hotel</a>
                                 </li>
                                 <li class="nav-item text-nowrap">
                                     <form action="{{ route('logout') }}" method="POST">
