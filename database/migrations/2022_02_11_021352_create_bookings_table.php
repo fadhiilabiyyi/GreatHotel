@@ -20,7 +20,7 @@ class CreateBookingsTable extends Migration
             $table->string('email')->unique();
             $table->string('telephone');
             $table->foreignId('room_id')->constrained('rooms');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
