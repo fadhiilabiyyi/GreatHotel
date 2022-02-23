@@ -7,7 +7,7 @@
 <div class="col-lg-8">
     <a href="{{ route('room-facilities.index') }}" class="btn btn-secondary mb-3">Back</a>
 
-    <form action="{{ route('room-facilities.store') }}" method="POST">
+    <form action="{{ route('room-facilities.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="facility_name" class="form-label">Nama Fasilitas</label>
@@ -27,7 +27,17 @@
                 </div>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+            <label for="image" class="form-label @error('image') is-invalid @enderror">Foto Fasilitas Kamar</label>
+            <img class="img-preview img-fluid mb-3 col-sm-6">
+            <input class="form-control" type="file" id="image" name="image" required onchange="previewImage()">
+            @error('image')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
     </form>
 </div>
 

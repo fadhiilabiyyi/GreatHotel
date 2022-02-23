@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Facility;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class AdminRoomFacilityController extends Controller
 {
@@ -43,13 +44,15 @@ class AdminRoomFacilityController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'facility_name' => ['required', 'max:255'],
-            'description' => ['required'],
+            'facility_name' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'image|file|max:1024',
         ];
 
         $validatedData = $request->validate($rules);
 
         $validatedData['facility_type'] = 'room';
+        $validatedData['image'] = $request->file('image')->store('uploaded-images');
 
         Facility::create($validatedData);
 
@@ -92,11 +95,20 @@ class AdminRoomFacilityController extends Controller
         $rules = [
             'facility_name' => ['required', 'max:255'],
             'description' => ['required'],
+            'image' => 'image|file|max:1024',
         ];
 
         $validatedData = $request->validate($rules);
 
         $validatedData['facility_type'] = 'room';
+
+        if ($request->file('image')) {
+            if ($room_facility->image) {
+                Storage::delete($room_facility->image);
+            }
+            
+            $validatedData['image'] = $request->file('image')->store('uploaded-images');
+        }
 
         Facility::where('id', $room_facility->id)->update($validatedData);
 
@@ -111,6 +123,10 @@ class AdminRoomFacilityController extends Controller
      */
     public function destroy(Facility $room_facility)
     {
+        if ($room_facility->image) {
+            Storage::delete($room_facility->image);
+        }
+
         Facility::destroy($room_facility->id);
 
         return redirect('/dashboard/room-facilities')->with('success', 'Room Facility has been removed');

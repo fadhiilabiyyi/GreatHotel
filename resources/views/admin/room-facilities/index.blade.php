@@ -17,6 +17,7 @@
                 <th>#</th>
                 <th>Nama Fasilitas</th>
                 <th>Deskripsi</th>
+                <th>Gambar</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $room_facility->facility_name }}</td>
                 <td>{{ $room_facility->description }}</td>
+                <td><img src="{{ asset('storage/' . $room_facility->image) }}" alt="Gambar {{ $room_facility->facility_name }}" width="50" class="img-fluid"></td>
                 <td>
                     <a href="{{ route('room-facilities.edit', $room_facility->id) }}" class="badge bg-warning" onclick="return confirm('Apakah Anda Yakin?')">
                         <span>Edit</span></a>
