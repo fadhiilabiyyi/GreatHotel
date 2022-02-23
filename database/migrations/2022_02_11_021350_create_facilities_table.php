@@ -18,6 +18,7 @@ class CreateFacilitiesTable extends Migration
             $table->string('facility_name');
             $table->enum('facility_type', ['hotel', 'room']);
             $table->longText('description');
+            $table->string('image');
             $table->timestamps();
         });
     }

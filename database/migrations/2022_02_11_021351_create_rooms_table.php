@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->enum('room_type', ['Reguler', 'Deluxe', 'Superior']);
             $table->string('number_of_rooms');
             $table->foreignId('facility_id')->constrained('facilities');
+            $table->string('image');
             $table->timestamps();
         });
     }
