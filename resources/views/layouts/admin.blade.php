@@ -38,7 +38,7 @@
                                     <a href="/dashboard/users" class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}">User</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link {{ Request::is('dashboard/rooms*') ? 'active' : '' }}">Kamar</a>
+                                    <a href="/dashboard/rooms" class="nav-link {{ Request::is('dashboard/rooms*') ? 'active' : '' }}">Kamar</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/dashboard/room-facilities" class="nav-link {{ Request::is('dashboard/room-facilities*') ? 'active' : '' }}">Fasilitas Kamar</a>
