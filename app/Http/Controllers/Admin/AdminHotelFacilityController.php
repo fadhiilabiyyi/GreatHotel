@@ -46,7 +46,7 @@ class AdminHotelFacilityController extends Controller
         $rules = [
             'facility_name' => 'required|max:255',
             'description' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:3024',
         ];
 
         $validatedData = $request->validate($rules);
@@ -95,7 +95,7 @@ class AdminHotelFacilityController extends Controller
         $rules = [
             'facility_name' => ['required', 'max:255'],
             'description' => ['required'],
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:3024',
         ];
 
         $validatedData = $request->validate($rules);

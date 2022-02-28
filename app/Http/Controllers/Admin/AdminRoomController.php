@@ -49,7 +49,7 @@ class AdminRoomController extends Controller
             'room_type' => 'required|max:255',
             'number_of_rooms' => 'required|numeric',
             'facility_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:3024',
         ];
 
         $validatedData = $request->validate($rules);
@@ -99,7 +99,7 @@ class AdminRoomController extends Controller
             'room_type' => 'required|max:255',
             'number_of_rooms' => 'required|numeric',
             'facility_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:3024',
         ];
 
         $validatedData = $request->validate($rules);
