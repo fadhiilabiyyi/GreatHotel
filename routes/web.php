@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminRoomFacilityController;
 use App\Http\Controllers\Admin\AdminHotelFacilityController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\Receptionist\ReceptionistReservationController;
 
 /*
@@ -48,3 +49,6 @@ Route::resource('/dashboard/reservations', ReceptionistReservationController::cl
 // Route::put('/dashboard/reservation/updateStatus/{id}', ReceptionistReservationController::class, 'updateStatus')->middleware('receptionist');
 
 Route::put('dashboard/reservation/{reservation:id}/updateStatus', [ReceptionistReservationController::class, 'updateStatus'])->name('updateStatus')->middleware('receptionist');
+
+// Hotel Guest Dashboard
+Route::get('facilities', [FacilityController::class, 'index'])->name('facilities')->middleware('auth');
