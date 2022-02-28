@@ -109,6 +109,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Reservation::create([
+            'order_name' => 'Yamin Soe',
             'booking_id' => '1',
             'check_in' => now(),
             'check_out' => now(),
@@ -116,6 +117,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Reservation::create([
+            'order_name' => 'Joko Wi Anjwar',
             'booking_id' => '2',
             'check_in' => now(),
             'check_out' => now(),
@@ -123,6 +125,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Reservation::create([
+            'order_name' => 'Dani Wizzbeng',
             'booking_id' => '3',
             'check_in' => now(),
             'check_out' => now(),
