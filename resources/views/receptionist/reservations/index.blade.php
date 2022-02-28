@@ -10,13 +10,12 @@
     </div>
 @endif
 
-<form action="/dashboard/reservations">
-    <div class="w-25 input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search Name" name="search">
-        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+<form action="{{ url()->current() }}" autocomplete="off">
+    <div class="w-25 input-group mb-3 input-group-sm">
+        <input type="search" class="form-control sm" placeholder="Search Name" name="search" value="{{ request('search') }}">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
     </div>
 </form>
-
 
 <div class="table-responsive col-lg-12">
     <table class="table table-sm table-bordered table-hover border-dark text-center">
@@ -34,7 +33,7 @@
             @foreach ($reservations as $reservation)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $reservation->booking->order_name }}</td>
+                <td>{{ $reservation->order_name }}</td>
                 <td>{{ $reservation->check_in }}</td>
                 <td>{{ $reservation->check_out }}</td>
                 <td>
@@ -71,7 +70,7 @@
     </table>
     
 
-    {{ $reservations->links() }}
+    {{-- {{ $reservations->links() }} --}}
 </div>
 
 @endsection
