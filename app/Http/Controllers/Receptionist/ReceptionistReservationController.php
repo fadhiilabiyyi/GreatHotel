@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Receptionist;
 
-use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReceptionistReservationController extends Controller
 {
@@ -13,10 +14,15 @@ class ReceptionistReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $title = 'Data Reservasi';
-        $reservations = Reservation::latest()->paginate(5);
+        
+        $reservations    = Reservation::when($request->search, function ($query) use ($request) {
+            $query->where('order_name', 'like', "%{$request->search}%");
+        })->orderBy('created_at', 'desc')->paginate(5);
+    
+        $reservations->appends($request->only('search'));
 
         return view('receptionist.reservations.index', compact('title', 'reservations')) 
                 ->with('i', (request('page', 1) - 1) * 5);
