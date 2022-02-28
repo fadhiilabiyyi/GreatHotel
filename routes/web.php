@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminRoomFacilityController;
 use App\Http\Controllers\Admin\AdminHotelFacilityController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\Receptionist\ReceptionistReservationController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,4 @@ Route::put('dashboard/reservation/{reservation:id}/updateStatus', [ReceptionistR
 
 // Hotel Guest Dashboard
 Route::get('facilities', [FacilityController::class, 'index'])->name('facilities')->middleware('auth');
+Route::get('rooms', [RoomController::class, 'index'])->name('rooms')->middleware('auth');
