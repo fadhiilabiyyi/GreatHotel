@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminRoomFacilityController;
 use App\Http\Controllers\Admin\AdminHotelFacilityController;
+use App\Http\Controllers\Receptionist\ReceptionistReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,9 @@ Route::resource('dashboard/users', AdminUserController::class)->except('show')->
 Route::resource('dashboard/rooms', AdminRoomController::class)->except('show')->middleware('admin');
 Route::resource('dashboard/room-facilities', AdminRoomFacilityController::class)->except('show')->middleware('admin');
 Route::resource('dashboard/hotel-facilities', AdminHotelFacilityController::class)->except('show')->middleware('admin');
+
+// Receptionist Dashboard
+Route::resource('/dashboard/reservations', ReceptionistReservationController::class)->except('create', 'store');    
+// Route::put('/dashboard/reservation/updateStatus/{id}', ReceptionistReservationController::class, 'updateStatus')->middleware('receptionist');
+
+Route::put('dashboard/reservation/{reservation:id}/updateStatus', [ReceptionistReservationController::class, 'updateStatus'])->name('updateStatus')->middleware('receptionist');
