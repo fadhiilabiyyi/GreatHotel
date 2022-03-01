@@ -90,6 +90,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'yamien@gmail.com',
             'telephone' => '089602974567',
             'room_id' => '1',
+            'check_in' => now(),
+            'check_out' => now(),
+            'status' => 'check_in',
         ]);
 
         Booking::create([
@@ -98,6 +101,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'wianjwar@gmail.com',
             'telephone' => '081632641280',
             'room_id' => '2',
+            'check_in' => now(),
+            'check_out' => now(),
+            'status' => 'check_in',
         ]);
 
         Booking::create([
@@ -106,27 +112,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'wizzbang@gmail.com',
             'telephone' => '089678456783',
             'room_id' => '3',
-        ]);
-
-        Reservation::create([
-            'order_name' => 'Yamin Soe',
-            'booking_id' => '1',
-            'check_in' => now(),
-            'check_out' => now(),
-            'status' => 'check_in',
-        ]);
-
-        Reservation::create([
-            'order_name' => 'Joko Wi Anjwar',
-            'booking_id' => '2',
-            'check_in' => now(),
-            'check_out' => now(),
-            'status' => 'check_in',
-        ]);
-
-        Reservation::create([
-            'order_name' => 'Dani Wizzbeng',
-            'booking_id' => '3',
             'check_in' => now(),
             'check_out' => now(),
             'status' => 'check_in',
