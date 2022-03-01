@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminRoomFacilityController;
+
 use App\Http\Controllers\Admin\AdminHotelFacilityController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\Receptionist\ReceptionistReservationController;
-use App\Http\Controllers\RoomController;
-use App\Models\Booking;
 
 /*
 |--------------------------------------------------------------------------

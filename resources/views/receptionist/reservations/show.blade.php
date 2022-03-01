@@ -11,16 +11,17 @@
 @endif
 
 <div class="table-responsive col-lg-12">
+    <a href="{{ route('reservations.index') }}" class="btn btn-secondary mb-3">Back</a>
     <div class="card">
         <div class="card-header">
             {{ 'ID Registrasi : ' . $reservation->id }}
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{ $reservation->booking->order_name }}</h5>
+            <h5 class="card-title">{{ $reservation->order_name }}</h5>
             <p class="card-text">
-                Email : {{ $reservation->booking->email }} <br>
-                No Telp : {{ $reservation->booking->telephone }} <br>
-                Kamar : {{ $reservation->booking->room->room_type }}
+                Email : {{ $reservation->email }} <br>
+                No Telp : {{ $reservation->telephone }} <br>
+                Kamar : {{ $reservation->room->room_type }}
             </p>
             <p class="card-text">
                 Informasi Reservasi <br>

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Receptionist;
 
-use App\Models\Booking;
-use App\Models\Reservation;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
+use Illuminate\Http\Request;
 
 class ReceptionistReservationController extends Controller
 {
@@ -18,7 +17,7 @@ class ReceptionistReservationController extends Controller
     {
         $title = 'Data Reservasi';
         
-        $reservations    = Reservation::when($request->search, function ($query) use ($request) {
+        $reservations = Booking::when($request->search, function ($query) use ($request) {
             $query->where('order_name', 'like', "%{$request->search}%");
         })->orderBy('created_at', 'desc')->paginate(5);
     
@@ -52,13 +51,12 @@ class ReceptionistReservationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show(Booking $reservation)
     {
         $title = 'Detail | Data Reservasi';
-        $reservation = $reservation;
 
         return view('receptionist.reservations.show', compact('title', 'reservation'));
     }
@@ -66,10 +64,10 @@ class ReceptionistReservationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+    public function edit(Booking $booking)
     {
         //
     }
@@ -78,10 +76,10 @@ class ReceptionistReservationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function update(Request $request, Booking $booking)
     {
         //
     }
@@ -89,21 +87,21 @@ class ReceptionistReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy(Booking $booking)
     {
         //
     }
 
-    public function updateStatus(Request $request, Reservation $reservation)
+    public function updateStatus(Request $request, Booking $reservation)
     {
         $rules = ['status' => 'required'];
 
         $validatedData = $request->validate($rules);
 
-        Reservation::where('id', $reservation->id)->update($validatedData);
+        Booking::where('id', $reservation->id)->update($validatedData);
 
         return redirect('/dashboard/reservations/'.$reservation->id)->with('success', 'Status has been updated');
     }
