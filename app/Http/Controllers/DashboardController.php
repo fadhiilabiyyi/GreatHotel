@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,5 +23,12 @@ class DashboardController extends Controller
 
             return view('hotel_guest.index', compact('title'));
         }
+    }
+
+    public function show(Booking $reservation)
+    {
+        $title = "Detail";
+
+        return view('hotel_guest.detail', compact('title', 'reservation'));
     }
 }

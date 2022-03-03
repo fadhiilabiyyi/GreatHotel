@@ -9,9 +9,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\AdminRoomFacilityController;
 
+use App\Http\Controllers\Admin\AdminRoomFacilityController;
 use App\Http\Controllers\Admin\AdminHotelFacilityController;
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\Receptionist\ReceptionistReservationController;
 
 /*
@@ -57,3 +58,6 @@ Route::get('rooms', [RoomController::class, 'index'])->name('rooms')->middleware
 // Booking
 Route::get('booking', [BookingController::class, 'index'])->name('booking')->middleware('auth');
 Route::post('booking', [BookingController::class, 'store'])->name('reservation')->middleware('auth');
+
+// Detail Booking
+Route::get('dashboard/detail/{reservation:id}', [DashboardController::class, 'show'])->name('detail-reservation');
