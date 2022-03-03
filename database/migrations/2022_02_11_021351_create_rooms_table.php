@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->string('room_type');
             $table->string('number_of_rooms');
             $table->foreignId('facility_id')->constrained('facilities');
+            $table->longText('description');
             $table->string('image')->nullable();
             $table->timestamps();
         });
