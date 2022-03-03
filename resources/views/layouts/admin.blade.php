@@ -35,6 +35,9 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item">
+                                    <a href="/" class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/dashboard/users" class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}">User</a>
                                 </li>
                                 <li class="nav-item">
@@ -46,7 +49,7 @@
                                 <li class="nav-item">
                                     <a href="/dashboard/hotel-facilities" class="nav-link {{ Request::is('dashboard/hotel-facilities*') ? 'active' : '' }}">Fasilitas Hotel</a>
                                 </li>
-                                <li class="nav-item text-nowrap">
+                                <li class="nav-item text-nowrap ms-3">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button class="nav-link px-3 bg-light border-0" type="submit" onclick="return('Anda yakin ingin keluar?')">Logout</button>

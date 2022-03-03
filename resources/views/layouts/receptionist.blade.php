@@ -34,10 +34,13 @@
     
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}">Dashboard</a>
+                                </li>
                                 <li class="nav-item me-3">
                                     <a href="/dashboard/reservations" class="nav-link {{ Request::is('dashboard/reservations*') ? 'active' : '' }}">Data Reservasi</a>
                                 </li>
-                                <li class="nav-item text-nowrap">
+                                <li class="nav-item text-nowrap ms-3">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button class="nav-link px-3 bg-light border-0" type="submit" onclick="return('Anda yakin ingin keluar?')">Logout</button>
