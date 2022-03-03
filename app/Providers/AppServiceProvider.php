@@ -42,5 +42,8 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('receptionist', function(User $user) {
             return $user->role === 'receptionist';
         });
+
+        // Carbon Locale ID
+        setLocale(LC_TIME, $this->app->getLocale());
     }
 }
