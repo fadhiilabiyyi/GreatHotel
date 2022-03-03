@@ -90,9 +90,11 @@ class ReceptionistReservationController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy(Booking $reservation)
     {
-        //
+        Booking::destroy($reservation->id);
+
+        return redirect('/dashboard/hotel-facilities')->with('success', 'Hotel Facility has been removed');
     }
 
     public function updateStatus(Request $request, Booking $reservation)

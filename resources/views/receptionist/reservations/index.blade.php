@@ -52,17 +52,12 @@
                     <a href="{{ route('reservations.show', $reservation->id) }}" class="badge bg-info">
                         <span>Detail</span></a>
 
-                    <a href="{{ route('reservations.edit', $reservation->id) }}" class="badge bg-warning" onclick="return confirm('Apakah Anda Yakin?')">
-                        <span>Edit</span></a>
+                    <form action="{{ route('reservations.destroy', $reservation->id) }}" method="post" class="d-inline">    
+                        @method('delete')
+                        @csrf
 
-                        <form action="{{ route('reservations.destroy', $reservation->id) }}" method="post" class="d-inline">
-                            
-                            @method('delete')
-                            @csrf
-
-                            <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Menghapus Data Ini Akan Mempengaruhi Data Lain, Anda Yakin?')"><span>Delete</span></button>
-
-                        </form>
+                        <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Menghapus Data Ini Akan Mempengaruhi Data Lain, Anda Yakin?')"><span>Delete</span></button>
+                    </form>
                 </td>
             </tr>
             @endforeach
