@@ -8,10 +8,10 @@
         </div>
         <div class="col-lg-6">
             <h2 class="display-5 fw-bold lh-1 mb-3">Tentang Kami</h2>
-            <p class="lead">Hotel ramah keluarga dengan kualitas terbaik di kelasnya. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus atque omnis expedita, laudantium nobis minima dignissimos est nostrum quia, sed mollitia obcaecati optio autem nemo libero quos nam explicabo?</p>
+            <p class="lead">Lepaskan diri Anda ke Hotel Hebat, dikelilingi oleh keindahan pegunungan yang indah, danau, dan sawah menghijai. Nikmati sore yang hangat dengan berenang di kolam renang dengan pemandangan matahari terbenam yang memukau; Kid's Club yang luas - menawarkan beragam fasilitas dan kegiatan anak-anak yang melengkapi kenyamanan keluarga.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Daftar</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Login</button>
+                <a href="register" class="btn btn-primary btn-lg px-4 me-md-2">Daftar</a>
+                <a href="login" class="btn btn-outline-secondary btn-lg px-4">Login</a>
             </div>
       </div>
     </div>
