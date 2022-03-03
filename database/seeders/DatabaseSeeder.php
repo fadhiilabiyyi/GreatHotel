@@ -70,18 +70,21 @@ class DatabaseSeeder extends Seeder
             'room_type' => 'Reguler',
             'number_of_rooms' => '100',
             'facility_id' => '1',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempora assumenda expedita ratione atque, odio est harum nihil commodi a molestiae perspiciatis quibusdam facilis excepturi perferendis omnis sequi corporis hic et nostrum. Sint recusandae, aspernatur facere alias, quod ex et quis doloribus doloremque, adipisci quibusdam!',
         ]);
 
         Room::create([
             'room_type' => 'Deluxe',
             'number_of_rooms' => '75',
             'facility_id' => '2',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempora assumenda expedita ratione atque, odio est harum nihil commodi a molestiae perspiciatis quibusdam facilis excepturi perferendis omnis sequi corporis hic et nostrum. Sint recusandae, aspernatur facere alias, quod ex et quis doloribus doloremque, adipisci quibusdam!',
         ]);
 
         Room::create([
             'room_type' => 'Superior',
             'number_of_rooms' => '50',
             'facility_id' => '1',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempora assumenda expedita ratione atque, odio est harum nihil commodi a molestiae perspiciatis quibusdam facilis excepturi perferendis omnis sequi corporis hic et nostrum. Sint recusandae, aspernatur facere alias, quod ex et quis doloribus doloremque, adipisci quibusdam!',
         ]);
 
         Booking::create([
