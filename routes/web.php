@@ -61,3 +61,6 @@ Route::post('booking', [BookingController::class, 'store'])->name('reservation')
 
 // Detail Booking
 Route::get('dashboard/detail/{reservation:id}', [DashboardController::class, 'show'])->name('detail-reservation');
+
+// Print PDF
+Route::get('/dashboard/print/{reservation:id}', [PrintController::class, 'print'])->name('print');
