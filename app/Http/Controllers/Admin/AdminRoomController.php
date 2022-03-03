@@ -49,6 +49,7 @@ class AdminRoomController extends Controller
             'room_type' => 'required|max:255',
             'number_of_rooms' => 'required|numeric',
             'facility_id' => 'required',
+            'description' => 'required',
             'image' => 'image|file|max:3024',
         ];
 
@@ -69,7 +70,9 @@ class AdminRoomController extends Controller
      */
     public function show(Room $room)
     {
-        //
+        $title = 'Detail | Data Kamar';
+
+        return view('admin.rooms.show', compact('title', 'room'));
     }
 
     /**
@@ -99,6 +102,7 @@ class AdminRoomController extends Controller
             'room_type' => 'required|max:255',
             'number_of_rooms' => 'required|numeric',
             'facility_id' => 'required',
+            'description' => 'required',
             'image' => 'image|file|max:3024',
         ];
 

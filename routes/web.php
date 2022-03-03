@@ -44,7 +44,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Admin Dashboard
 Route::resource('dashboard/users', AdminUserController::class)->except('show')->middleware('admin');
-Route::resource('dashboard/rooms', AdminRoomController::class)->except('show')->middleware('admin');
+Route::resource('dashboard/rooms', AdminRoomController::class)->middleware('admin');
 Route::resource('dashboard/room-facilities', AdminRoomFacilityController::class)->except('show')->middleware('admin');
 Route::resource('dashboard/hotel-facilities', AdminHotelFacilityController::class)->except('show')->middleware('admin');
 

@@ -28,6 +28,15 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="description" class="form-label">Deskripsi</label>
+            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror">{{ old('decription') }}</textarea required placeholder="Deskripsi">
+            @error('description')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="facility_id" class="form-label">Fasilitas</label>
             <select class="form-select" name="facility_id" id="facility_id" required>
                 @foreach ($facilities as $facility)

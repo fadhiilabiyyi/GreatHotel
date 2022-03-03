@@ -26,7 +26,7 @@
             @foreach ($rooms as $room)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $room->room_type }}</td>
+                <td><a href="{{ route('rooms.show', $room->id) }}">{{ $room->room_type }}</a></td>
                 <td>{{ $room->number_of_rooms }}</td>
                 <td>{{ $room->facility->facility_name }}</td>
                 <td><img src="{{ asset('storage/' . $room->image) }}" alt="Gambar Kamar {{ $room->room_type }}" width="50" class="img-fluid"></td>
