@@ -64,8 +64,7 @@
         </tbody>
     </table>
     
-
-    {{-- {{ $reservations->links() }} --}}
+    {{ $reservations->links() }}
 </div>
 
 @endsection
