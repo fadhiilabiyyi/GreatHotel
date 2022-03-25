@@ -26,7 +26,7 @@
             <p class="card-text">
                 Informasi Reservasi <br>
                 Tanggal Check In : {{ $reservation->check_in }} <br>
-                Tanggal Check Out : {{ $reservation->check_in }} <br>
+                Tanggal Check Out : {{ $reservation->check_out }} <br>
                 Status : 
                 @switch($reservation->status)
                     @case('check_in')
