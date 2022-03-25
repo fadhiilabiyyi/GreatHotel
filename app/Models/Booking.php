@@ -10,7 +10,8 @@ class Booking extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    
+    protected $dates = ['check_in', 'check_out'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
