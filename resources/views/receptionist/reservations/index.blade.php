@@ -34,8 +34,8 @@
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $reservation->order_name }}</td>
-                <td>{{ $reservation->check_in }}</td>
-                <td>{{ $reservation->check_out }}</td>
+                <td>{{ $reservation->check_in->formatLocalized('%A, %d %B %Y Pukul : %H.%M ') }}</td>
+                <td>{{ $reservation->check_out->formatLocalized('%A, %d %B %Y Pukul : %H.%M ') }}</td>
                 <td>
                     @switch($reservation->status)
                         @case('check_in')

@@ -25,8 +25,8 @@
             </p>
             <p class="card-text">
                 Informasi Reservasi <br>
-                Tanggal Check In : {{ $reservation->check_in }} <br>
-                Tanggal Check Out : {{ $reservation->check_out }} <br>
+                Tanggal Check In : {{ $reservation->check_in->formatLocalized('%A, %d %B %Y Pukul : %H.%M ') }} <br>
+                Tanggal Check Out : {{ $reservation->check_out->formatLocalized('%A, %d %B %Y Pukul : %H.%M ') }} <br>
                 Status : 
                 @switch($reservation->status)
                     @case('check_in')

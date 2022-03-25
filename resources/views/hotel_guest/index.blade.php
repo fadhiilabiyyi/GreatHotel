@@ -9,7 +9,7 @@
         <div class="card-header">
             <a href="{{ route('detail-reservation', $reservation->id) }}">{{ 'ID Registrasi : ' . $reservation->id }}</a>
             <p class="card-text">
-                Tanggal : {{ $reservation->created_at }}
+                Waktu Registrasi : {{ $reservation->created_at->formatLocalized('%A, %d %B %Y Pukul : %H.%M '); }}
             </p>
         </div>
     </div>    
