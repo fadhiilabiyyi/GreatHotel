@@ -53,7 +53,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="check_out" class="form-label text-dark">Check In</label>
+                <label for="check_out" class="form-label text-dark">Check Out</label>
                 <input type="datetime-local" class="form-control" id="check_out" name="check_out" required>
                 @error('check_out')
                     <div class="invalid-feedback">
