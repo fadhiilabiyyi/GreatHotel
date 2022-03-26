@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Receptionist;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReceptionistReservationController extends Controller
 {
@@ -22,6 +23,14 @@ class ReceptionistReservationController extends Controller
         })->orderBy('created_at', 'desc')->paginate(5);
     
         $reservations->appends($request->only('search'));
+
+        if (request()->date1 || request()->date2) {
+            $date1 = Carbon::parse(request()->date1)->toDateTimeString();
+            $date2 = Carbon::parse(request()->date2)->toDateTimeString();
+            $reservations = Booking::whereBetween('check_in', [$date1, $date2])->orderBy('created_at', 'desc')->paginate(5);
+        } else {
+            $data = Booking::latest()->get();
+        }
 
         return view('receptionist.reservations.index', compact('title', 'reservations')) 
                 ->with('i', (request('page', 1) - 1) * 5);
