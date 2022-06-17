@@ -11,7 +11,7 @@
         @csrf
         <div class="mb-3">
             <label for="room_type" class="form-label">Tipe Kamar</label>
-            <input type="text" class="form-control @error('room_type') is-invalid @enderror" id="room_type" name="room_type" required autofocus value="{{ old('room_type') }}" placeholder="Nama Fasilitas">
+            <input type="text" class="form-control @error('room_type') is-invalid @enderror" id="room_type" name="room_type" required autofocus value="{{ old('room_type') }}" placeholder="Tipe Kamar">
             @error('room_type')
                 <div class="invalid-feedback">
                     {{ $message }}
